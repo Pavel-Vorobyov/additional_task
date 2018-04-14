@@ -121,9 +121,9 @@ function quickSearch(searchFieldID) {
 
         if (req.readyState == 4) {
             if (req.status == 200) {
-                sde = JSON.parse(req.responseText);
+                parsedJSON = JSON.parse(req.responseText);
                 if (searchReq.value != "") {
-                    linkedElem += search(sde.subs[currentSkillType.value].subs, searchReq.value);
+                    linkedElem += search(parsedJSON.subs[currentSkillType.value].subs, searchReq.value);
 
                     searchRes.style.display = 'block';
                     searchRes.insertAdjacentHTML("afterbegin", linkedElem);
