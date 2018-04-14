@@ -165,7 +165,6 @@ function showSubsByLink(searchingElemID) {
         elem.style.backgroundColor = currentColor;
     }, 500, currentColor, elem);
 
-
     while (elem.parentElement != "tdContent") {
         elem.style.display = 'block';
         elem = elem.parentElement;
@@ -219,7 +218,8 @@ function updateNode() {
     req.setRequestHeader("Content-type",
         "application/x-www-form-urlencoded");
     req.onload = function () {
-        changeSkillType(currentSkillType.type)
+        changeSkillType(currentSkillType.type);
+        showSubsByLink(parentID);
     };
     req.send(content);
 
