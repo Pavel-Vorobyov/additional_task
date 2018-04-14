@@ -43,7 +43,9 @@ function contentUpdate(typeButtonId, nodeList) {
             nodeList.subs[i].content + "</a>" +
             "<a style='width: 2%;" +
             " padding: 0px;" +
-            " padding-top: 10px'>" + nodeList.subs[i].subs.length.toString() + "</a><a style='width: 12.6%'>Modify</a><a style='width: 14.6%'>addNode</a>";
+            " padding-top: 10px'>" + nodeList.subs[i].subs.length.toString() + "</a>" +
+            "<a onclick='showUpdateWindow(" + nodeList.subs[i].id + ")' style='width: 12.6%'>Modify</a>" +
+            "<a onclick='showCreateWindow("+ nodeList.subs[i].id + ")' style='width: 14.6%'>addNode</a>";
 
         if (nodeList.subs[i].subs.length > 0) {
             resultHtml += subWriter(nodeList.subs[i].subs, nodeList.subs[i].id);
@@ -72,9 +74,9 @@ function subWriter(subs, divID) {
             subValue.content + "</a><a style='width: 2%;" +
             " padding: 0px;" +
             " padding-top: 10px'>" + subValue.subs.length.toString() + "</a><a " +
-            "onclick='showCreateWindow(" +subValue.id + ")' style='width: 12.6%'" +
+            "onclick='showUpdateWindow(" +subValue.id + ")' style='width: 12.6%'" +
             ">Modify</a><a style='width: 14.6%'" +
-            " onclick='showUpdateWindow(" +subValue.id + ")'>addNode</a>" +
+            " onclick='showCreateWindow(" +subValue.id + ")'>addNode</a>" +
             "<a onclick='deleteNode(" + subValue.id + ")' style='width: 10%'>delete</a>";
         if (subValue.subs.length > 0) {
             resultHtml += subWriter(subValue.subs, subValue.id);
@@ -178,20 +180,22 @@ function addNode() {
     req.open('POST', '/add/' + parentID);
     req.setRequestHeader("Content-type",
         "application/x-www-form-urlencoded");
-    req.onload = changeSkillType(currentSkillType.type);
+    req.onload = function () {
+        changeSkillType(currentSkillType.type)
+    };
     req.send(content);
 
     document.getElementById("updateWindow").style.display = 'none';
 }
 
-function showCreateWindow(parentID) {
+function showUpdateWindow(parentID) {
     document.getElementById("commitButton").setAttribute("onclick", "updateNode()");
     showWindow(parentID);
 }
 
-function showUpdateWindow(parentID) {
+function showCreateWindow(parentID) {
     document.getElementById("commitButton").setAttribute("onclick", "addNode()");
-    showWindow();
+    showWindow(parentID);
 }
 
 function showWindow(parentID) {
@@ -214,7 +218,9 @@ function updateNode() {
     req.open('POST', '/update/' + parentID);
     req.setRequestHeader("Content-type",
         "application/x-www-form-urlencoded");
-    req.onload = changeSkillType(currentSkillType.type);
+    req.onload = function () {
+        changeSkillType(currentSkillType.type)
+    };
     req.send(content);
 
     document.getElementById("updateWindow").style.display = 'none';
@@ -228,6 +234,8 @@ function deleteNode(currentNodeID) {
         + "/" + currentNodeID);
     req.setRequestHeader("Content-type",
         "application/x-www-form-urlencoded");
-    req.onload = changeSkillType(currentSkillType.type);
+    req.onload = function () {
+        changeSkillType(currentSkillType.type)
+    };
     req.send();
 }
