@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8" http-equiv="content-type" content="text/html">
+    <title>SkillMatrix</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/index.css}">
+</head>
+<body onload="init()">
+<div class="header">
+    <h1>Skill</h1><h2>Matrix</h2>
+
+</div>
+
+<div class="td-main-content-wrapper">
+    <div class="td-main-content">
+        <div class="td-header">
+
+            <a id="hard" style="background-color: #f0f2f4" onclick="changeSkillType(this.id)">Hard skills</a>
+            <a id="soft" style="margin-left: -1px" onclick="changeSkillType(this.id)">Soft skills</a>
+
+            <div class="input">
+                <input type="text"
+                       size="20"
+                       id="quick-search"
+                       placeholder="Quick search"
+                       onkeyup="quickSearch(this.id)">
+
+                <div id="search-result" class="search-result">
+
+                </div>
+            </div>
+
+        </div>
+
+        <div id="tdContent" class="td-content">
+
+        </div>
+
+    </div>
+
+    <div style="display: none" id="updateWindow" class="updateWindow">
+        <form name="crudWindow">
+            <input id="parentID" type="hidden">
+            <p>Enter content:</p>
+            <input id="content" type="text">
+            <a id="commitButton">Commit</a>
+        </form>
+    </div>
+</div>
+<script type="text/javascript" th:src="@{/index.js}"></script>
+</body>
+</html>

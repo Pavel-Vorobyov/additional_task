@@ -1,0 +1,177 @@
+html {
+    background-color:  #f0f2f4;
+}
+
+.td-main-content {
+    border-radius: 10px;
+    background-color: #ebebeb;
+
+}
+
+.header h1 {
+    letter-spacing: 6px;
+    font-size: 2.7em;
+    color: #be7429;
+    font-weight: bold;
+    float: left;
+    padding-left: 150px;
+}
+
+.header h2 {
+    text-align: left;
+    letter-spacing: 6px;
+    font-size: 1.4em;
+    color: #be7429;
+    font-weight: normal;
+    width: 450px;
+    float: left;
+    padding-top: 14px;
+}
+
+.header {
+    width: 100%;
+    /*background-color: darkolivegreen;*/
+    height: 80px;
+}
+
+.td-main-content-wrapper {
+    width: 100%;
+    height: 100%;
+}
+
+.td-main-content {
+    width: 900px;
+    min-height: 200px;
+    margin: auto;
+    margin-top: 40px;
+}
+
+.td-header {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+.td-header a {
+    display: block;
+    background-color: snow;
+    font-size: 17px;
+    /*margin-top: 5px;*/
+    /*margin-left: 5px;*/
+    padding: 15px;
+    padding-left: 20px;
+    padding-right: 20px;
+    float: left;
+    width: 100px;
+    border: 1px solid grey;
+}
+
+.td-header a:hover {
+    background-color: #f0f2f4;
+}
+
+.td-header input {
+    float: right;
+    margin: 10px;
+    padding: 2px;
+}
+
+.td-header .table-header {
+    background-color: #c5e7e0;
+    float: right;
+}
+
+.td-content  {
+    float: left;
+    background-color: snow;
+    width: 100%;
+}
+
+.td-content a {
+    display: block;
+    font-size: 1.4em;
+    padding: 10px;
+    padding-left: 20px;
+    padding-right: 0;
+    width: 100%;
+    float: left;
+
+}
+
+.td-content a:hover {
+    background-color: #f5ebe9;
+}
+
+.tab1 {
+    background-color: cornflowerblue;
+}
+
+.tab2 {
+    background-color: coral;
+}
+
+.tab3 {
+    background-color: yellow;
+}
+
+.search-result {
+    z-index: 99999;
+    position: absolute;
+
+    width: 280px;
+    height: 220px;
+    margin-top: 40px;
+    border-radius: 1px;
+    overflow-y: scroll;
+    display: none;
+}
+
+.search-result a {
+    width: 94%;
+    margin: 0;
+    padding: 7px;
+}
+
+.input {
+    float: right;
+}
+
+.nodeCount {
+    width: 1%;
+    padding: 0px;
+    padding-top: 10px;
+}
+
+.updateWindow {
+    position: absolute;
+    left: 35%;
+    top: 25%;
+
+    width: 370px;
+    float: left;
+    padding: 30px;
+    padding-bottom: 10px;
+    background-color: cornsilk;
+    border-radius: 20px;
+}
+
+.updateWindow p {
+    width: 120px;
+    float: left;
+    position: relative;
+    top: -10px;
+}
+
+.updateWindow a {
+    display: block;
+    float: right;
+    padding: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-right: 20px;
+    margin-top: 10px;
+}
+
+.updateWindow a:hover {
+    background-color: #c5e7e0;
+}
