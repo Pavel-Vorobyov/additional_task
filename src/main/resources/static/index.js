@@ -239,3 +239,7 @@ function deleteNode(currentNodeID) {
     };
     req.send();
 }
+
+function closeWindow() {
+    document.getElementById("updateWindow").style.display = 'none';
+}
